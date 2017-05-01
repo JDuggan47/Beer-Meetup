@@ -1,2 +1,7 @@
 <div id="app">
 </div>
+
+<div class="row">
+  <p><%= link_to "Sign Up", new_user_registration_path %></p>
+  <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete%></p>
+</div>
