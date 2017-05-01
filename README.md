@@ -2,7 +2,6 @@
 ![Code Climate](https://codeclimate.com/github/JDuggan47/breakable_toy.png)
 ![Coverage Status](https://coveralls.io/repos/JDuggan47/breakable_toy/badge.png)
 
-
 # README
 
 This repository has all the code necessary for starting a React on Rails application
