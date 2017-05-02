@@ -1,0 +1,27 @@
+.top-bar {
+  margin-bottom: 2em;
+  padding-bottom: 0;
+  padding-top: 1rem;
+
+  .menu {
+    background-color: transparent;
+  }
+
+  li {
+    font-family: sans-serif;
+    font-size: 1.25em;
+  }
+
+  .menu-text {
+    color: green;
+    font-family: sans-serif;
+  }
+
+}
+
+.flash {
+  text-align: center;
+  padding: 1em;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
