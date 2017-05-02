@@ -1,7 +1,14 @@
-<div id="app">
+<div class="top-bar">
+  <div class="top-bar-right">
+    <p><%= link_to "Sign Up", new_user_registration_path %></p>
+  </div>
+  <div class="top-bar-right">
+    <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></p>
+  </div>
+  <div class="top-bar-left">
+    <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
+  </div>
 </div>
 
-<div class="row">
-  <p><%= link_to "Sign Up", new_user_registration_path %></p>
-  <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete%></p>
+<div id="app">
 </div>
