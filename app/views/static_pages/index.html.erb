@@ -1,12 +1,25 @@
+<% flash.each do |type, message| %>
+  <div class="<%= "flash #{type}" %>">
+     <%= message %>
+  </div>
+<% end %>
+
 <div class="top-bar">
-  <div class="top-bar-right">
-    <p><%= link_to "Sign Up", new_user_registration_path %></p>
-  </div>
-  <div class="top-bar-right">
-    <p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></p>
-  </div>
   <div class="top-bar-left">
-    <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
+    <ul class="menu">
+      <li class="menu-text">The Beer Social Network!</li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <% if signed_in? %>
+        <li class="username"><%= current_user.username %> is currently signed in!</li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to "Join", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+    </div>
   </div>
 </div>
 
