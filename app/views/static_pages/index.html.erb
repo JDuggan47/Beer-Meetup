@@ -1,9 +1,3 @@
-<% flash.each do |type, message| %>
-  <div class="<%= "flash #{type}" %>">
-     <%= message %>
-  </div>
-<% end %>
-
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
@@ -13,7 +7,7 @@
   <div class="top-bar-right">
     <ul class="menu">
       <% if signed_in? %>
-        <li class="username"><%= current_user.username %> is currently signed in!</li>
+        <li class="username"><%= current_user.first_name %> is currently signed in!</li>
         <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
       <% else %>
         <li><%= link_to "Join", new_user_registration_path %></li>
@@ -23,5 +17,13 @@
   </div>
 </div>
 
-<div id="app">
+<div class="row">
+  <% if !signed_in? %>
+    <h3 class = "text-center"> Welcome to the Website! </h3>
+  <% else %>
+    <h3 class = "text-center"> Welcome <%= current_user.first_name %>! </h3>
+    <h3 class= "text-center"> <%= link_to "Here are the beers you've had!", user_path(current_user.id) %> </h3>
+    <h3 class = "text-center"> Fill the form out to add a beer to your list! </h3>
+    <div id="app"></div>
+  <% end %>
 </div>

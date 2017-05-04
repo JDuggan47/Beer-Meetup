@@ -8,7 +8,15 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <% flash.each do |type, message| %>
+    <div class="<%= "flash #{type}" %>">
+       <%= message %>
+    </div>
+  <% end %>
+
+
   <body>
     <%= yield %>
+
   </body>
 </html>

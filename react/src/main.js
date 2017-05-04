@@ -1,11 +1,12 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import BeerFormContainer from './containers/BeerFormContainer'
+
 
 $(function() {
   ReactDOM.render(
-    <App />,
+    <BeerFormContainer />,
     document.getElementById('app')
   );
 });
