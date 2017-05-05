@@ -2,7 +2,7 @@ class Api::V1::BeersController < ApiController
   skip_before_action :verify_authenticity_token, only: [:create, :update]
 
   def index
-    @beer = Beer.all
+    @beer = current_user.beers
     render json: @beer
   end
 
