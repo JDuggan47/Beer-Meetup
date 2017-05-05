@@ -21,7 +21,7 @@
   <% if !signed_in? %>
     <h2 class = "text-center"> Welcome!</h3>
     <h2 class = "text-center"> Log In To Find The Beer You've Always Wanted To Try!</h5>
-    <img src="https://images8.alphacoders.com/413/413078.jpg" width=100%>
+    <img src="https://images8.alphacoders.com/413/413078.jpg" >
   <% else %>
     <h3 class = "text-center"> Welcome <%= current_user.first_name %>! </h3>
     <h3 class= "text-center"> <%= link_to "Here are the beers you've had!", user_path(current_user.id) %> </h3>

@@ -1,4 +1,5 @@
 import React from 'react';
+import  BeerTile from './BeerTile'
 
 const NewBeerForm = props => {
   return (
