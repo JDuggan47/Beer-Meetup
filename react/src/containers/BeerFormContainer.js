@@ -71,7 +71,7 @@ class BeerFormContainer extends Component {
     }
 
     getData() {
-      fetch('/api/v1/beers')
+      fetch('/api/v1/beers', {credentials: 'same-origin'} )
         .then(response => {
           if (response.ok) {
             return response;
@@ -130,6 +130,7 @@ class BeerFormContainer extends Component {
             <input className="button" type="submit" value="Submit" />
           </div>
         </form>
+        <h3 className="text-center">Here are the Beers You've Tried!</h3>
         {newBeers}
       </div>
     )
