@@ -35,8 +35,7 @@ class BeerFormContainer extends Component {
       this.setState({
         name_of_beer:"",
         name_of_brewery:"",
-        style:"",
-        beers: []
+        style:""
       })
     }
 
@@ -55,16 +54,18 @@ class BeerFormContainer extends Component {
       })
         .then(response => {
           if (response.ok) {
-            return response;
+            let beer = response.json()
+            return beer;
           } else {
             let errorMessage = `${response.status} ($response.statusText)`,
               error = new Error(errorMessage);
-            throw(error);
-          }
+            throw(error); }
         })
-        .then(response => response.json())
-        .then(body => {
-          this.setState({beers: body});
+        .then(beer => {
+          let currentState = this.state.beers
+          let newBeer = beer
+          let newState = currentState.concat(newBeer)
+          this.setState({beers: newState});
         })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
       this.handleClearForm(event);
@@ -93,6 +94,7 @@ class BeerFormContainer extends Component {
     }
 
   render() {
+    // debugger;
     let newBeers = this.state.beers.map(beer => {
       return(
         <BeerTile

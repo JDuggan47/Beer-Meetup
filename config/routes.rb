@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 
   resources :beers
 
+  resources :meetups do
+    resources :users
+  end
+
+  resources :members
+
   namespace :api do
     namespace :v1 do
       resources :beers
