@@ -24,7 +24,7 @@
     <img src="https://images8.alphacoders.com/413/413078.jpg" >
   <% else %>
     <h3 class = "text-center"> Welcome <%= current_user.first_name %>! </h3>
-    <h3 class= "text-center"> <%= link_to "Here are the beers you've had!", user_path(current_user.id) %> </h3>
+    <h3 class = "text-center"> <%= link_to "Checkout Out The Events Near You!", meetups_path %>
     <h3 class = "text-center"> Fill the form out to add a beer to your list! </h3>
     <div id="app"></div>
   <% end %>

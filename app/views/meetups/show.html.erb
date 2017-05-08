@@ -1,0 +1,11 @@
+<h1>Name: <%= @meetup.title %></h1>
+<h3>Description: <%= @meetup.description %></h3>
+<h3>Location: <%= @meetup.location %></h3>
+<h3> <img src= '<%= @meetup.image_url %>'> </h3>
+
+
+<%= button_to "Join", meetup_users_path(@meetup.id), method: :post %>
+
+<% @members.each do |member| %>
+  <li><%= member.username %></li>
+<% end %>
