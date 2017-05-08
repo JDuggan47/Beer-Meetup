@@ -1,11 +1,41 @@
-<h1>Name: <%= @meetup.title %></h1>
-<h3>Description: <%= @meetup.description %></h3>
-<h3>Location: <%= @meetup.location %></h3>
-<h3> <img src= '<%= @meetup.image_url %>'> </h3>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">The Beer Social Network!</li>
+      <li class="menu-text"><%= link_to 'List of Events', meetups_path %></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <% if signed_in? %>
+        <li class="username"><%= current_user.first_name %> is currently signed in!</li>
+        <li class="menu-text"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to "Join", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+    </div>
+  </div>
+</div>
 
+<div class="text-center">
+  <h1>Name: <%= @meetup.title %></h1>
+  <h3>Description: <%= @meetup.description %></h3>
+  <h3>Location: <%= @meetup.location %></h3>
+  <h3> <img src= '<%= @meetup.image_url %>'> </h3>
+  <%= button_to "Click Here To Join!", meetup_users_path(@meetup.id), method: :post, class: 'button'%>
+</div>
 
-<%= button_to "Join", meetup_users_path(@meetup.id), method: :post %>
-
-<% @members.each do |member| %>
-  <li><%= member.username %></li>
-<% end %>
+<div class="large-3 columns large-offset-1 columns">
+  <%if @meetup.users.length == 0 %>
+    <h3 class="text-center">No one is coming yet! Be the first to join!</h3>
+  <% else %>
+    <h3 class="text-center">The following guests are coming!</h3>
+    <% @members.each do |member| %>
+      <div class="card event-beer">
+        <h4 class="member-names text-center">Guest: <%= member.username %></h4>
+        <h5 class="text-center">Is bringing: <%= member.beers.sample(1)[0].name_of_beer%></h5>
+      </div>
+    <% end %>
+  <% end %>
+</div>
