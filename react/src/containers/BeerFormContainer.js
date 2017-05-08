@@ -132,7 +132,7 @@ class BeerFormContainer extends Component {
             <input className="button" type="submit" value="Submit" />
           </div>
         </form>
-        <h3 className="text-center">Here are the Beers You've Tried!</h3>
+        <h3 className="beer-title text-center">Here are the Beers You've Tried!</h3>
         {newBeers}
       </div>
     )
