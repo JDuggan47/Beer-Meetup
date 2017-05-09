@@ -8,6 +8,9 @@ gem 'jquery-rails'
 gem 'listen'
 gem 'devise'
 gem 'foundation-rails'
+gem 'geocoder'
+gem 'gmaps4rails'
+
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
