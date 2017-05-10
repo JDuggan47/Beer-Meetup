@@ -8,6 +8,12 @@ gem 'jquery-rails'
 gem 'listen'
 gem 'devise'
 gem 'foundation-rails'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+gem 'coffee-rails'
+
+
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
@@ -15,6 +21,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'shoulda'
   gem 'valid_attribute'
+  gem 'dotenv-rails'
 end
 
 group :test do
