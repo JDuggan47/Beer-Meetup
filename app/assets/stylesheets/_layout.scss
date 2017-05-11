@@ -1,5 +1,5 @@
 .top-bar {
-  background-color: #e6b6b0;
+  background-color: black;
 
   .menu {
     background-color: transparent;
@@ -11,7 +11,7 @@
   }
 
   .menu-text {
-    color: #1779BA;
+    color: yellow;
     font-family: sans-serif;
   }
 
@@ -22,4 +22,45 @@
   padding: 1em;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
+}
+
+.header-image{
+  background-image: image-url("beer2.jpg");
+  height: 300px;
+  margin-bottom: 1em;
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-blend-mode: screen;
+  // zoom: 10%;
+  // background-repeat:none;
+}
+
+.welcome-card {
+  width: 600px;
+  background-color: black;
+  color: lightblue;
+  border-radius: 5%;
+  text-align: center
+}
+
+.login-card {
+  width: 600px;
+  background-color: white;
+  color: lightblue;
+  border-radius: 5%;
+  text-align: center
+}
+
+.search-card {
+  width: 500px;
+}
+
+
+
+
+body {
+  background-image: url("beer.jpg");
+  background-repeat: no-repeat;
 }

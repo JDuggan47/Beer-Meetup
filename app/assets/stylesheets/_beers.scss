@@ -5,6 +5,14 @@
   text-align: center
 }
 
+.beer-formcard {
+  background-color: white;
+  padding: 2em;
+  border-radius: 5%;
+  color: black;
+  margin-top: 1em;
+}
+
 .beer-title {
   padding-bottom: 1em;
 }
@@ -17,4 +25,7 @@
   background-color: white;
   border-radius: 5%;
   color: black;
+}
+.beer-form-label {
+  font-size: 20px;
 }

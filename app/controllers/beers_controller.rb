@@ -4,4 +4,7 @@ class BeersController < ApplicationController
     @beers = Beer.all
   end
 
+  def new
+  end
+
 end

@@ -12,6 +12,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'coffee-rails'
+gem 'active_model_serializers'
 
 
 group :development, :test do
