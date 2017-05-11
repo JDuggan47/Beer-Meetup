@@ -107,7 +107,7 @@ class BeerFormContainer extends Component {
       )
     })
     return (
-      <div>
+      <div className="card beer-formcard">
         <form onSubmit={this.handleFormSubmit}>
           <NewBeerForm
             content={this.state.name_of_beer}

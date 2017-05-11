@@ -1,0 +1,36 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">The Beer Social Network!</li>
+      <li><%= link_to "Back", root_path %></li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <% if signed_in? %>
+        <li class="username"><%= current_user.first_name %> is currently signed in!</li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to "Join", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="card text-center">
+      <h4>Is there a beer you've always wanted to try?</h4>
+      <h4>Search to see if a user has it!</h4>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="SearchBarContainer">
+    <div class="SearchBar">
+      <div id="beersearch"></div>
+    </div>
+  </div>
+</div>
