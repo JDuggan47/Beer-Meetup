@@ -20,17 +20,21 @@
 </div>
 
 <div class="text-center">
-  <h1>Name: <%= @meetup.title %></h1>
-  <h3>Description: <%= @meetup.description %></h3>
-  <h3><%= @meetup.date.strftime("%B %d, %Y") %></h3>
-  <%= button_to "Click Here To Join!", meetup_users_path(@meetup.id), method: :post, class: 'button'%>
+  <div class="card">
+    <h1>Name: <%= @meetup.title %></h1>
+    <h3>Description: <%= @meetup.description %></h3>
+    <h3><%= @meetup.date.strftime("%B %d, %Y") %></h3>
+    <%= button_to "Click Here To Join!", meetup_users_path(@meetup.id), method: :post, class: 'button'%>
+  </div>
 </div>
 
 <div class="large-2 columns large-offset-2 columns">
-  <%if @meetup.users.length == 0 %>
+  <div class="card">
+    <%if @meetup.users.length == 0 %>
     <h3 class="text-center">Be The First To Join!</h3>
-  <% else %>
+    <% else %>
     <h3 class="text-center">The following guests are coming!</h3>
+  </div>
     <% @members.each do |member| %>
       <div class="card event-beer">
         <h4 class="member-names text-center">Guest: <%= member.username %></h4>
