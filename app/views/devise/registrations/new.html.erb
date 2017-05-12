@@ -1,63 +1,63 @@
 <div class="row">
-  <div class="card login-card">
 
-    <h2 class="text-center">Sign up!</h2>
+  <h2 class="text-center">Sign up!</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+    <div class="card meetups-form">
 
-      <div class="field">
-        <div class="small-12 columns">
-          <%= f.label :first_name, class: "small_forms" %><br />
-          <%= f.text_field :first_name, autofocus: true %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <div class="small-12 columns">
+            <%= f.label :first_name, class: "small_forms" %><br />
+            <%= f.text_field :first_name, autofocus: true %>
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <div class="small-12 columns">
-          <%= f.label :last_name, class: "small_forms" %><br />
-          <%= f.text_field :last_name, autofocus: true %>
+        <div class="field">
+          <div class="small-12 columns">
+            <%= f.label :last_name, class: "small_forms" %><br />
+            <%= f.text_field :last_name, autofocus: true %>
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <div class="small-12 columns">
-          <%= f.label :username, class: "small_forms"  %>
-          <%= f.text_field :username, autofocus: true %>
+        <div class="field">
+          <div class="small-12 columns">
+            <%= f.label :username, class: "small_forms"  %>
+            <%= f.text_field :username, autofocus: true %>
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <div class="small-12 columns">
-          <%= f.label :email, class: "small_forms"  %><br />
-          <%= f.email_field :email, autofocus: true %>
+        <div class="field">
+          <div class="small-12 columns">
+            <%= f.label :email, class: "small_forms"  %><br />
+            <%= f.email_field :email, autofocus: true %>
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <div class="small-12 columns">
-          <%= f.label :password, class: "small_forms"  %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
+        <div class="field">
+          <div class="small-12 columns">
+            <%= f.label :password, class: "small_forms"  %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <div class="small-12 columns">
-          <%= f.label :password_confirmation, class: "small_forms"  %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <div class="field">
+          <div class="small-12 columns">
+            <%= f.label :password_confirmation, class: "small_forms"  %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
         </div>
-      </div>
 
-      <div class="actions small-12 columns">
-        <%= f.submit "Sign up", class: 'button' %>
-      </div>
+        <div class="actions small-12 columns">
+          <%= f.submit "Sign up", class: 'button' %>
+        </div>
+    </div>
 
-    <% end %>
+      <% end %>
 
     <%= render "devise/shared/links" %>
-  </div>
-
 </div>

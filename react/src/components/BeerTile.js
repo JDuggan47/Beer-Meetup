@@ -4,7 +4,7 @@ const BeerTile = (props) => {
   return (
     <div className= "beer-box">
       <div className= "large-4 columns">
-        <div className="card">
+        <div className="card text-center">
           <div className="card-section">
             <h4 className="beer-form-label">Name of Beer: {props.name}</h4>
             <h4 className="beer-form-label">Brewery: {props.brewery}</h4>
