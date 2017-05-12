@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SearchBeerTile from '../components/BeerTile'
+import SearchBeerTile from '../components/SearchBeerTile'
 import SearchBar from '../components/SearchBar'
 
 class BeerSearchContainer extends Component {
@@ -33,7 +33,7 @@ class BeerSearchContainer extends Component {
     this.setState({ search: event.target.value })
     this.fetchSearchResults();
   }
-
+  debugger;
   render(){
     let searchResults = this.state.results.map((beer) => {
       return(

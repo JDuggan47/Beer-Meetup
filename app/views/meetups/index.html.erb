@@ -1,7 +1,8 @@
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
-      <li class="menu-text">The Beer Social Network!</li>
+      <li class="menu-text">The Beer Network!</li>
+      <li><%= link_to "Home", root_path %></li>
     </ul>
   </div>
   <div class="top-bar-right">
@@ -59,12 +60,13 @@
     </div>
   </div>
 
-
 <div class="large-6 columns large-offset-1 text-center">
   <h3 class="card">Checkout the Available Meetups!</h3>
-    <% @meetups.each do |meetup| %>
-      <div class="card meetups-card">
-        <h4><%= link_to meetup.title, meetup_path(meetup) %></h4>
-      </div>
-    <% end %>
+</div>
+<div class="large-6 columns large-offset-1 text-center">
+  <% @meetups.each do |meetup| %>
+    <div class="card eventTitle-card">
+      <h4 class="text-center"><%= link_to meetup.title, meetup_path(meetup) %></h4>
+    </div>
+  <% end %>
 </div>

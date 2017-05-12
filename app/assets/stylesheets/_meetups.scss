@@ -4,12 +4,22 @@
   color: black;
 }
 
+.eventTitle-card {
+  width: 400px;
+  padding: 1px;
+  margin: auto;
+  margin-bottom: 10px;
+
+}
+
 .meetups-form {
   background-color: white;
   padding: 2em;
   border-radius: 5%;
   color: black;
   margin-top: 1em;
+  opacity: 0.95;
+  border: black;
 }
 .meetups-header {
   margin-top: 2em;
