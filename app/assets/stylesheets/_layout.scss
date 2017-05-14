@@ -24,25 +24,16 @@
   font-weight: bold;
 }
 
-.header-image{
-  background-image: image-url("beer2.jpg");
-  height: 300px;
-  margin-bottom: 1em;
-  width:100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // background-blend-mode: screen;
-  // zoom: 10%;
-  // background-repeat:none;
-}
-
 .welcome-card {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 3em;
+  margin-top: 20em;
   width: 600px;
   background-color: black;
-  color: lightblue;
-  border-radius: 5%;
-  text-align: center
+  position: fixed;
+  border-radius: 2em;
+
 }
 
 .login-card {
@@ -57,10 +48,15 @@
   width: 500px;
 }
 
-
-
+.checkout-tile{
+  margin: 1em;
+}
 
 body {
   background-image: url("beer.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
 }

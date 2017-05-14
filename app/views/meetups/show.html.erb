@@ -24,30 +24,26 @@
     <h1>Name: <%= @meetup.title %></h1>
     <h3>Description: <%= @meetup.description %></h3>
     <h3><%= @meetup.date.strftime("%B %d, %Y") %></h3>
-    <%= button_to "Click Here To Join!", meetup_users_path(@meetup.id), method: :post, class: 'button'%>
-  </div>
-</div>
-
-<div class="large-2 columns large-offset-2 columns">
-  <div class="card">
-    <%if @meetup.users.length == 0 %>
-    <h3 class="text-center">Be The First To Join!</h3>
+    <% if current_user.beers.length == 0%>
+      <h4 class="text-center">You Need To Add A Beer First!</h4>
     <% else %>
-    <h3 class="text-center">The following guests are coming!</h3>
-  </div>
-    <% @members.each do |member| %>
-      <div class="card event-beer">
-        <h4 class="member-names text-center">Guest: <%= member.username %></h4>
-        <h5 class="text-center">Is bringing: <%= member.beers.sample(1)[0].name_of_beer%></h5>
-      </div>
+      <%= button_to "Click Here To Join!", meetup_users_path(@meetup.id), method: :post, class: 'button'%>
     <% end %>
-  <% end %>
+  </div>
 </div>
 
+<%if current_user.beers.length == 0 %>
+  <div class="large-4 columns large-offset-4 text-center">
+    <h4 class="card"> <%= link_to "Go Back to Submit Your Beer Here!", root_path %></h4>
+  </div>
+<% elsif @meetup.users.length == 0 %>
+  <div class="large-4 columns large-offset-2 columns">
+    <h3 class="card text-center">Be The First To Join!</h3>
+  </div>
 
-<div class="large-6 columns large-offset-2 text-center">
-  <div id="map"></div>
-  <script>
+  <div class="large-3 large-offset-1 columns">
+    <div id="map"></div>
+    <script>
     function initMap() {
       var uluru = {lat: <%= @meetup.latitude %>, lng: <%= @meetup.longitude %>};
       var map = new google.maps.Map(document.getElementById('map'), {
@@ -59,8 +55,41 @@
         map: map
       });
     }
-  </script>
-  <script async defer
+    </script>
+    <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_KEY'] %>&callback=initMap">
-  </script>
-</div>
+    </script>
+  </div>
+<% else %>
+  <div class="large-4 columns large-offset-2 columns">
+    <h3 class="card text-center">The following guests are coming!</h3>
+      <div class="card text-center">
+        <div class="card-section">
+          <% @members.each do |member| %>
+            <h4 class="card">Guest: <%= member.username %></h4>
+            <h4>Is bringing: <%= member.beers.sample(1)[0].name_of_beer%></h4>
+          <% end %>
+        </div>
+      </div>
+  </div>
+
+  <div class="large-3 large-offset-1 columns">
+    <div id="map"></div>
+    <script>
+    function initMap() {
+      var uluru = {lat: <%= @meetup.latitude %>, lng: <%= @meetup.longitude %>};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 17,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_KEY'] %>&callback=initMap">
+    </script>
+  </div>
+<% end %>

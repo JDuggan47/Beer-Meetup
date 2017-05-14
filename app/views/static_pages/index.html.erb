@@ -17,27 +17,24 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="beer-welcome">
-    <% if !signed_in? %>
-    <div class="welcome">
-      <div class = "large-5 large-offset-7 columns text-center">
-        <div class="card welcome-card">
-          <h2>Welcome!</h2>
-          <h2>Find The Beer You've</h2>
-          <h2>Always Wanted To Try!</h2>
-        </div>
+<% if !signed_in? %>
+  <div class="large-5 large-offset-6 columns">
+    <div class="text-center">
+      <div class="card welcome-card">
+        <h2>Welcome!</h2>
+        <h2>Find The Beer You've</h2>
+        <h2>Always Wanted To Try!</h2>
       </div>
     </div>
   </div>
-</div>
+
 <% else %>
   <div class="row">
     <div class="text-center">
       <div class="card">
         <h3>Welcome <%= current_user.first_name %>! </h3>
         <h3> <%= link_to "Checkout Out The Events Near You!", meetups_path %><h3>
-        <h3> <%= link_to "Search And See Beers That Other Users Have!", new_beer_path %><h3>
+        <h3> <%= link_to "Search And See Beers Other Users Have!", new_beer_path %><h3>
         <h3> Fill Out The Form To Add A Beer To Your List! </h3>
       </div>
     </div>
